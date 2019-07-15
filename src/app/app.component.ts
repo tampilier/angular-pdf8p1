@@ -24,9 +24,6 @@ export class AppComponent  {
   {
     //this.sub.push();
     console.log('AS1');
-    
-   this
-      ._subComponent
-      .update('AA8');
+    //this._subComponent
   }
 }

@@ -1,11 +1,11 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoreService } from './core/core.service';
 
 @Component({
   selector: 'sub-app',
   template: `
   <ul>
-    <li *ngFor="let item of items let i=index;">
+    <li *ngFor="let item of items.text let i=index;">
       {{item}}:{{i}}
     </li>
   </ul>
@@ -13,17 +13,19 @@ import { CoreService } from './core/core.service';
   providers: [CoreService]
 })
 export class SubComponent implements OnInit {
-  //_service: CoreService;
-  items = [];
+  items;
 
   constructor(
-    private _service: CoreService,
-    myRenderer: Renderer2
+    private _service: CoreService
   ){
   }
 
   ngOnInit(): void
   {
+    this.items = 
+    this
+      ._service
+      .get();
     /*this
       ._service
       .eventStates
@@ -36,13 +38,5 @@ export class SubComponent implements OnInit {
   ngDoCheck()
   {
     console.log('ngDoCheck: ',arguments);
-  }
-
-  public update(item)
-  {
-    this.items.push(item);
-    this.myRenderer.update();
-    /*this.items.push('AA'+this.items.length);
-    console.log('List: ',this.items);*/
   }
 }
