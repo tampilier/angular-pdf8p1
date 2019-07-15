@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 @Injectable()
 export class CoreService implements OnInit, OnDestroy {
     eventStates: Subject<any>;
-    items = [];
+    items = ['123'];
 
     constructor()
     {
@@ -29,8 +29,13 @@ export class CoreService implements OnInit, OnDestroy {
       this.eventStates.complete();
     }
 
+    get()
+    {
+      return this.items;
+    }
+
     push(data)
     {
-      this.eventStates.subscribe(x => console.log(x));
+      this.items.push(data);
     }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { CoreService } from './core/core.service';
 
 @Component({
@@ -14,10 +14,11 @@ import { CoreService } from './core/core.service';
 })
 export class SubComponent implements OnInit {
   //_service: CoreService;
-  items;
+  items = [];
 
   constructor(
-    private _service: CoreService
+    private _service: CoreService,
+    myRenderer: Renderer2
   ){
   }
 
@@ -32,8 +33,15 @@ export class SubComponent implements OnInit {
     console.log('ngOnInit');*/
   }
 
-  public push()
+  ngDoCheck()
   {
+    console.log('ngDoCheck: ',arguments);
+  }
+
+  public update(item)
+  {
+    this.items.push(item);
+    this.myRenderer.update();
     /*this.items.push('AA'+this.items.length);
     console.log('List: ',this.items);*/
   }

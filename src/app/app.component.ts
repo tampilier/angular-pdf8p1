@@ -11,12 +11,13 @@ import { CoreService } from './core/core.service';
   <sub-app></sub-app>
   `,
   styleUrls: [ './app.component.css' ],
-  providers: [CoreService]
+  providers: [CoreService, SubComponent]
 })
 export class AppComponent  {
 
   constructor(
-    private _service: CoreService
+    private _service: CoreService,
+    private _subComponent: SubComponent
   ){}
 
   run()
@@ -24,9 +25,8 @@ export class AppComponent  {
     //this.sub.push();
     console.log('AS1');
     
-    this
-      ._service
-      .eventStates
-      .next('AA8');
+   this
+      ._subComponent
+      .update('AA8');
   }
 }
