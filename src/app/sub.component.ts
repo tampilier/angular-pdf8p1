@@ -10,8 +10,7 @@ import { Subscription } from 'rxjs';
       {{item.text}}:{{i}}
     </li>
   </ul>
-  `,
-  providers: [CoreService]
+  `
 })
 export class SubComponent implements OnInit, OnDestroy {
   items: any[] = [];
