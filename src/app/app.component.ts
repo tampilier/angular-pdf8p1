@@ -9,7 +9,7 @@ import { CoreService } from './core/core.service';
     <input type="button" (click)="run();" value="Click me" />
   </div>
   <div>
-    <sub-app></sub-app>
+    <router-outlet></router-outlet>
   </div>
   `,
   styleUrls: [ './app.component.css' ],
@@ -30,5 +30,7 @@ export class AppComponent  {
     this
       ._service
       .push('ddd');
+
+    console.log('Get: ',this._service.get());
   }
 }

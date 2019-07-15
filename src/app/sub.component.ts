@@ -23,6 +23,7 @@ export class SubComponent implements OnInit, OnDestroy {
     this.subscription = this._service.get().subscribe(message => {
       console.log('subscribe: ',message);
       this.items.push(message);
+      console.log('subscribe2: ',this.items);
     });
   }
 
@@ -41,10 +42,10 @@ export class SubComponent implements OnInit, OnDestroy {
     console.log('ngOnInit');*/
   }
 
-  ngDoCheck()
+  /*ngDoCheck()
   {
-    console.log('ngDoCheck: ',arguments);
-  }
+    console.log('ngDoCheck: ',this.items);
+  }*/
 
   ngOnDestroy() {
       // unsubscribe to ensure no memory leaks
