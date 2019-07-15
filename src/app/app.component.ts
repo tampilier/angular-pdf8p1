@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SubComponent } from './sub.component';
 import { CoreService } from './core/core.service';
 
 @Component({
@@ -13,13 +12,12 @@ import { CoreService } from './core/core.service';
   </div>
   `,
   styleUrls: [ './app.component.css' ],
-  providers: [CoreService, SubComponent]
+  providers: [CoreService]
 })
 export class AppComponent  {
 
   constructor(
-    private _service: CoreService,
-    private _subComponent: SubComponent
+    private _service: CoreService
   ){}
 
   run()
