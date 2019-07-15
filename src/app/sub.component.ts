@@ -26,17 +26,6 @@ export class SubComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void
   {
-    /*this.items = 
-      this
-        ._service
-        .get();*/
-    /*this
-      ._service
-      .eventStates
-      .subscribe(([data]) => {
-          console.log('Subscriber B:', data);
-      });
-    console.log('ngOnInit');*/
   }
 
   /*ngDoCheck()
