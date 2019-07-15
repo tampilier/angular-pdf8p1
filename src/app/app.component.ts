@@ -10,7 +10,6 @@ import { CoreService } from './core/core.service';
   </div>
   <div>
     <sub-app></sub-app>
-    <router-outlet></router-outlet>
   </div>
   `,
   styleUrls: [ './app.component.css' ],

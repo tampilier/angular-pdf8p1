@@ -7,8 +7,16 @@ import { AppComponent } from './app.component';
 import { SubComponent } from './sub.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, SubComponent],
-  bootstrap: [AppComponent]
+  imports: [
+    BrowserModule, 
+    FormsModule
+  ],
+  declarations: [
+    AppComponent, 
+    SubComponent
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
