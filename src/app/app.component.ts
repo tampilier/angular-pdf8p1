@@ -8,7 +8,10 @@ import { CoreService } from './core/core.service';
   <div align="center">
     <input type="button" (click)="run();" value="Click me" />
   </div>
-  <sub-app></sub-app>
+  <div>
+    <sub-app></sub-app>
+    <router-outlet></router-outlet>
+  </div>
   `,
   styleUrls: [ './app.component.css' ],
   providers: [CoreService, SubComponent]
@@ -24,6 +27,9 @@ export class AppComponent  {
   {
     //this.sub.push();
     console.log('AS1');
-    //this._subComponent
+
+    this
+      ._service
+      .push('ddd');
   }
 }

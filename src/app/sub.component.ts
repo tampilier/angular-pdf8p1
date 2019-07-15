@@ -1,31 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CoreService } from './core/core.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'sub-app',
   template: `
   <ul>
-    <li *ngFor="let item of items.text let i=index;">
-      {{item}}:{{i}}
+    <li *ngFor="let item of items let i=index;">
+      {{item.text}}:{{i}}
     </li>
   </ul>
   `,
   providers: [CoreService]
 })
-export class SubComponent implements OnInit {
-  items;
+export class SubComponent implements OnInit, OnDestroy {
+  items: any[] = [];
+  subscription: Subscription;
 
   constructor(
     private _service: CoreService
   ){
+    this.subscription = this._service.get().subscribe(message => {
+      console.log('subscribe: ',message);
+      this.items.push(message);
+    });
   }
 
   ngOnInit(): void
   {
-    this.items = 
-    this
-      ._service
-      .get();
+    /*this.items = 
+      this
+        ._service
+        .get();*/
     /*this
       ._service
       .eventStates
@@ -38,5 +44,10 @@ export class SubComponent implements OnInit {
   ngDoCheck()
   {
     console.log('ngDoCheck: ',arguments);
+  }
+
+  ngOnDestroy() {
+      // unsubscribe to ensure no memory leaks
+      this.subscription.unsubscribe();
   }
 }
