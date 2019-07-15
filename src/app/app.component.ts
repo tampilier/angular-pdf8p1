@@ -1,8 +1,7 @@
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { SubComponent } from './sub.component';
 import { CoreService } from './core/core.service';
 
-@Injectable()
 @Component({
   selector: 'my-app',
   template: ` 
@@ -28,6 +27,6 @@ export class AppComponent  {
     this
       ._service
       .eventStates
-      .next('ASDF');
+      .next('AA8');
   }
 }

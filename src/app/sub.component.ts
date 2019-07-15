@@ -1,7 +1,6 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoreService } from './core/core.service';
 
-@Injectable()
 @Component({
   selector: 'sub-app',
   template: `
@@ -20,30 +19,22 @@ export class SubComponent implements OnInit {
   constructor(
     private _service: CoreService
   ){
-    //this._service = _service;
-    this.items = ['a123'];
-    console.log('constructor');
   }
 
   ngOnInit(): void
   {
-    this
+    /*this
       ._service
       .eventStates
       .subscribe(([data]) => {
           console.log('Subscriber B:', data);
       });
-    console.log('ngOnInit');
+    console.log('ngOnInit');*/
   }
 
   public push()
   {
-    this.items.push('AA'+this.items.length);
-    console.log('List: ',this.items);
-  }
-
-  public getInstance()
-  {
-    return this;
+    /*this.items.push('AA'+this.items.length);
+    console.log('List: ',this.items);*/
   }
 }
