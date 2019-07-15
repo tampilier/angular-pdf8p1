@@ -24,13 +24,8 @@ export class AppComponent  {
 
   run()
   {
-    //this.sub.push();
-    console.log('AS1');
-
     this
       ._service
       .push('ddd');
-
-    console.log('Get: ',this._service.get());
   }
 }

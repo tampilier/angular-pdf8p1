@@ -20,9 +20,7 @@ export class SubComponent implements OnInit, OnDestroy {
     private _service: CoreService
   ){
     this.subscription = this._service.get().subscribe(message => {
-      console.log('subscribe: ',message);
       this.items.push(message);
-      console.log('subscribe2: ',this.items);
     });
   }
 
